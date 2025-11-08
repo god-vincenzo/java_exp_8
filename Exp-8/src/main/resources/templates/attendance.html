@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Attendance Portal</title>
+</head>
+<body>
+    <h2>Student Attendance Form</h2>
+    <form method="post" action="/attendance">
+        <label>Student ID:</label>
+        <input type="text" name="studentId" required/><br/><br/>
+        
+        <label>Student Name:</label>
+        <input type="text" name="studentName" required/><br/><br/>
+        
+        <label>Date:</label>
+        <input type="date" name="date" required/><br/><br/>
+        
+        <label>Status:</label>
+        <select name="status" required>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select><br/><br/>
+        
+        <input type="submit" value="Submit Attendance"/>
+    </form>
+    <br/>
+    <a href="/">Home</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Records</title>
+</head>
+<body>
+    <h2>Employee Records</h2>
+    <div th:if="${error}" style="color:red;">
+        <p th:text="${error}"></p>
+    </div>
+    <table border="1">
+        <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+        <tr th:each="emp : ${employees}">
+            <td th:text="${emp.empId}"></td>
+            <td th:text="${emp.name}"></td>
+            <td th:text="${emp.salary}"></td>
+        </tr>
+    </table>
+    <br/>
+    <h3>Search Employee</h3>
+    <form method="get" action="/employees">
+        Employee ID: <input type="text" name="empId"/>
+        <input type="submit" value="Search"/>
+    </form>
+    <br/>
+    <a href="/">Home</a>
+</body>
+</html>

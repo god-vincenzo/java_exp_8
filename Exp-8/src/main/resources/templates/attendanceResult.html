@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Attendance Result</title>
+</head>
+<body>
+    <div th:if="${success}">
+        <h2>Attendance Submitted Successfully!</h2>
+        <p>Student ID: <span th:text="${studentId}"></span></p>
+        <p>Student Name: <span th:text="${studentName}"></span></p>
+        <p>Date: <span th:text="${date}"></span></p>
+        <p>Status: <span th:text="${status}"></span></p>
+    </div>
+    <div th:if="${error}" style="color:red;">
+        <h2>Error occurred</h2>
+        <p th:text="${error}"></p>
+    </div>
+    <br/>
+    <a href="/attendance">Submit Another Attendance</a> | 
+    <a href="/">Home</a>
+</body>
+</html>
